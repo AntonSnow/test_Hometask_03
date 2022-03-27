@@ -29,17 +29,17 @@ public class Time {
                 setSecond(enteredSecond);
             } else {
                 second += enteredSecond;
-                if (second > 0) {
+                if (getSecond() > 0) {
                     minute += second / 60;
                     second %= 60;
                 }
                 minute += enteredMinute;
-                if (minute > 0) {
+                if (getMinute() > 0) {
                     hour += minute / 60;
                     minute %= 60;
                 }
                 hour += enteredHours;
-                if (hour > 0) {
+                if (getHour() > 0) {
                     hour %= 24;
                 }
             }
@@ -68,5 +68,17 @@ public class Time {
         } else {
             second = 0;
         }
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
     }
 }
