@@ -28,19 +28,21 @@ public class Time {
                 setMinute(enteredMinute);
                 setSecond(enteredSecond);
             } else {
+
                 this.second += enteredSecond;
-                if (this.second > 0) {
+                if (getSecond() > 0) {
                     this.minute += this.second / 60;
                     this.second %= 60;
                 }
                 this.minute += enteredMinute;
-                if (this.minute > 0) {
+                if (getMinute() > 0) {
                     this.hour += this.minute / 60;
                     this.minute %= 60;
                 }
                 this.hour += enteredHours;
-                if (this.hour > 0) {
+                if (getHour() > 0) {
                     this.hour %= 24;
+
                 }
             }
         }
@@ -68,5 +70,17 @@ public class Time {
         } else {
             this.second = 0;
         }
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public int getSecond() {
+        return second;
     }
 }
