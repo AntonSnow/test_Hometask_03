@@ -7,9 +7,9 @@ public class Time {
     private int second;
 
     public Time() {
-        hour = 0;
-        minute = 0;
-        second = 0;
+        this.hour = 0;
+        this.minute = 0;
+        this.second = 0;
     }
 
     public String getCurrentTime() {
@@ -28,19 +28,19 @@ public class Time {
                 setMinute(enteredMinute);
                 setSecond(enteredSecond);
             } else {
-                second += enteredSecond;
-                if (second > 0) {
-                    minute += second / 60;
-                    second %= 60;
+                this.second += enteredSecond;
+                if (this.second > 0) {
+                    this.minute += this.second / 60;
+                    this.second %= 60;
                 }
-                minute += enteredMinute;
-                if (minute > 0) {
-                    hour += minute / 60;
-                    minute %= 60;
+                this.minute += enteredMinute;
+                if (this.minute > 0) {
+                    this.hour += this.minute / 60;
+                    this.minute %= 60;
                 }
-                hour += enteredHours;
-                if (hour > 0) {
-                    hour %= 24;
+                this.hour += enteredHours;
+                if (this.hour > 0) {
+                    this.hour %= 24;
                 }
             }
         }
@@ -48,25 +48,25 @@ public class Time {
 
     public void setHour(int number) {
         if (number >= 0 && number <= 23) {
-            hour = number;
+            this.hour = number;
         } else {
-            hour = 0;
+            this.hour = 0;
         }
     }
 
     public void setMinute(int number) {
         if (number >= 0 && number <= 59) {
-            minute = number;
+            this.minute = number;
         } else {
-            minute = 0;
+            this.minute = 0;
         }
     }
 
     public void setSecond(int number) {
         if (number >= 0 && number <= 59) {
-            second = number;
+            this.second = number;
         } else {
-            second = 0;
+            this.second = 0;
         }
     }
 }
